@@ -37,17 +37,35 @@ namespace workshop3
                 new Trooper(){Name="Sniper",Vitality=2,Speed=1,Cost=8},
                 new Trooper(){Name="Engineer",Vitality=4,Speed=4,Cost=6}
             };
+            listbox_left.ItemsSource = troopers;
+            listbox_right.ItemsSource = army;
+        }
 
+        private void CostChange()
+        {
+            cost.Content = "Army cost:" + osszeg.ToString() + "$";
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-
+            army.Add((Trooper)listbox_left.SelectedItem);
+            int osszeg = 0;
+            foreach (var Trooper in army)
+            {
+                osszeg+= Trooper.Cost;
+            }
+            CostChange();
         }
 
         private void remove_Click(object sender, RoutedEventArgs e)
         {
-
+            army.Remove((Trooper)listbox_right.SelectedItem);
+            int osszeg = 0;
+            foreach(var Trooper in army)
+            {
+                osszeg+= Trooper.Cost;
+            }
+            CostChange();
         }
 
         private void edit_Click(object sender, RoutedEventArgs e)
