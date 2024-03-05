@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace workshop3
 {
-    class Trooper
+    public class Trooper
     {
         private string name;
         private int speed;
