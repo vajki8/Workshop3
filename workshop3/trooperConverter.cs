@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace workshop3
 {
-    class ProgressBar : IValueConverter
+    class trooperConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
