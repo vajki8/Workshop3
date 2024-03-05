@@ -9,22 +9,23 @@ using System.Windows.Media;
 
 namespace workshop3
 {
-    internal class trooperConverter : IValueConverter
+    public class trooperConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+         
             int number = (int)value;
             if (number < 4)
             {
-                return Brushes.Red;
+                return "Red";
             }
             else if (number < 7)
             {
-                return Brushes.Yellow;
+                return "Yellow";
             }
             else
             {
-                return Brushes.Green;
+                return "Green";
             }
         }
 
