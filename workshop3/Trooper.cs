@@ -21,5 +21,12 @@ namespace workshop3
             this.cost = cost;
         }
 
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public 
+
     }
 }
