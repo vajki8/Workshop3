@@ -47,12 +47,24 @@ namespace workshop3
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-
+            army.Add((Trooper)listbox_left.SelectedItem);
+            int osszeg = 0;
+            foreach (var Trooper in army)
+            {
+                osszeg+= Trooper.Cost;
+            }
+            CostChange();
         }
 
         private void remove_Click(object sender, RoutedEventArgs e)
         {
-
+            army.Remove((Trooper)listbox_right.SelectedItem);
+            int osszeg = 0;
+            foreach(var Trooper in army)
+            {
+                osszeg+= Trooper.Cost;
+            }
+            CostChange();
         }
 
         private void edit_Click(object sender, RoutedEventArgs e)
