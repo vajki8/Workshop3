@@ -70,7 +70,7 @@ namespace workshop3
 
         private void edit_Click(object sender, RoutedEventArgs e)
         {
-            Window1 te = new Window1((this.DataContext as  ));
+            Window1 te = new Window1((Trooper)listbox_left.SelectedItem);
             te.ShowDialog();
         }
     }
