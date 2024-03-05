@@ -27,6 +27,7 @@ namespace workshop3
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
 
             troopers = new ObservableCollection<Trooper>()
             {
@@ -51,7 +52,8 @@ namespace workshop3
 
         private void edit_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window1 te = new Window1((this.DataContext as  ));
+            te.ShowDialog();
         }
     }
 }
