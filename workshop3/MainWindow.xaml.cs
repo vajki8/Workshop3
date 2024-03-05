@@ -63,7 +63,7 @@ namespace workshop3
             int osszeg = 0;
             foreach(var Trooper in army)
             {
-                osszeg+= Trooper.Cost;
+                osszeg+= Trooper.Cost*Trooper.Vitality*Trooper.Speed;
             }
             CostChange();
         }

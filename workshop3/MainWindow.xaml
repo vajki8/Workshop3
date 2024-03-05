@@ -12,8 +12,33 @@
             <ColumnDefinition Width="639*"/>
             <ColumnDefinition Width="161*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="listbox_left" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,365,10"/>
-        <ListBox x:Name="listbox_right" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="478,10,10,10" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="listbox_left" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,365,10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <StackPanel Orientation="Horizontal"  Background="{Binding Name}">
+                            <Label Content="{Binding Vitality}" Margin="10"/>
+                            <Label Content="{Binding Speed}" Margin="10"/>
+                            <Label Content="{Binding Cost}" Margin="10"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="listbox_right" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="478,10,10,10" Grid.ColumnSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Name}" Margin="10"  />
+                            <Label Content="{Binding Vitality}" Margin="10"/>
+                            <Label Content="{Binding Speed}" Margin="10"/>
+                            <Label Content="{Binding Cost}" Margin="10"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button x:Name="add" Content="Add To Army" HorizontalAlignment="Right" Margin="0,47,206,0" VerticalAlignment="Top" Width="113" Click="add_Click" Height="51"/>
         <Button x:Name="remove" Content="Remove from Army" HorizontalAlignment="Left" Margin="320,120,0,0" VerticalAlignment="Top" Height="51" Width="113" Click="remove_Click"/>
         <Button x:Name="edit" Content="Edit Trooper" HorizontalAlignment="Left" Margin="320,0,0,0" VerticalAlignment="Center" Width="113" Height="55" Click="edit_Click"/>
