@@ -18,11 +18,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1">
-                        <StackPanel Orientation="Horizontal"  Background="{Binding Name, Converter={StaticResource trooperConverter}}">
-                            <Label Content="{Binding Vitality}" Margin="10"/>
-                            <Label Content="{Binding Speed}" Margin="10"/>
-                            <Label Content="{Binding Cost}" Margin="10"/>
-                            
+                        <StackPanel Orientation="Horizontal"  Background="{Binding Name}">
+                            <ProgressBar Maximum="10" Value="{Binding Vitality}" Foreground="{Binding Vitality, Converter={StaticResource colorConverter}}" Height="10" Margin="10" />
                         </StackPanel>
                     </Border>
                 </DataTemplate>
