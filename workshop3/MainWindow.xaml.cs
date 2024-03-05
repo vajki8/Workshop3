@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,22 @@ namespace workshop3
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<Trooper> troopers;
+        ObservableCollection<Trooper> army = new ObservableCollection<Trooper>();
+        int osszeg = 0;
         public MainWindow()
         {
             InitializeComponent();
+
+            troopers = new ObservableCollection<Trooper>()
+            {
+                new Trooper(){Name="Marine",Vitality=8,Speed=5,Cost=5},
+                new Trooper(){Name="Pilot",Vitality=7,Speed=3,Cost=10},
+                new Trooper(){Name="Infantry",Vitality=6,Speed=8,Cost=10},
+                new Trooper(){Name="Sniper",Vitality=2,Speed=1,Cost=8},
+                new Trooper(){Name="Engineer",Vitality=4,Speed=4,Cost=6}
+            };
+
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
