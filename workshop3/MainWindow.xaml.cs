@@ -46,7 +46,7 @@ namespace workshop3
             osszeg = 0;
             foreach (var item in listbox_right.Items)
             {
-                osszeg += (item as Trooper).Cost;
+                osszeg += (item as Trooper).Cost * (item as Trooper).Speed * (item as Trooper).Vitality;
             }
             cost.Content = "Army cost:" + osszeg.ToString() + "$";
         }
