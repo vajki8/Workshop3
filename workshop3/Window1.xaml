@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Window1" Height="275" Width="500">
     <StackPanel x:Name="stack">
-        <Label Content="Power" Padding="10" Background="LightBlue" />
-        <TextBox Text="{Binding Power, UpdateSourceTrigger=Explicit}" Padding="10"/>
         <Label Content="Vitality" Padding="10" Background="LightBlue" />
         <TextBox Text="{Binding Vitality, UpdateSourceTrigger=Explicit}" Padding="10"/>
+        <Label Content="Speed" Padding="10" Background="LightBlue" />
+        <TextBox Text="{Binding Speed, UpdateSourceTrigger=Explicit}" Padding="10"/>
         <Label Content="Cost" Padding="10" Background="LightBlue" />
         <TextBox Text="{Binding Cost, UpdateSourceTrigger=Explicit}" Padding="10"/>
         <Button Content="Save" Click="Button_Click" Padding="10" />
