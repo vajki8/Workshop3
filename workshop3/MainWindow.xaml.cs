@@ -43,28 +43,23 @@ namespace workshop3
 
         private void CostChange()
         {
+            osszeg = 0;
+            foreach (var item in listbox_right.Items)
+            {
+                osszeg += (item as Trooper).Cost;
+            }
             cost.Content = "Army cost:" + osszeg.ToString() + "$";
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
             army.Add((Trooper)listbox_left.SelectedItem);
-            int osszeg = 0;
-            foreach (var Trooper in army)
-            {
-                osszeg+= Trooper.Cost;
-            }
             CostChange();
         }
 
         private void remove_Click(object sender, RoutedEventArgs e)
         {
             army.Remove((Trooper)listbox_right.SelectedItem);
-            int osszeg = 0;
-            foreach(var Trooper in army)
-            {
-                osszeg+= Trooper.Cost*Trooper.Vitality*Trooper.Speed;
-            }
             CostChange();
         }
 
